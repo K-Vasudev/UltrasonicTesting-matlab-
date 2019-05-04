@@ -1,0 +1,99 @@
+This document contains rough instructions on how to use files in this folder to save, view and analyze ultrasonic signals.
+
+CONTENTS:
+1. How to Perform Velocity Measurement
+2. How to View Fourier Transforms
+3. How to Save a New Ultrasonic Data Set - Preferred Method
+4. How to Save a New Ultrasonic Data Set - Non-Preferred Method
+5. Purpose of UT_Signal file
+
+
+1. How to Perform Velocity Measurement
+
+-Open 'UT_VelocityAnalysis.m' in Matlab.
+-Press 'Run' in the 'Editor' tab of the Matlab console
+-Follow instructions in the Command Window of Matlab
+-Plot will open in a new tab
+-Press 'Hide Peaks' to toggle red circles around signal peaks
+-Zoom to desired signal section and press 'Print Peaks' to see the time and voltage for each peak with a red circle visible around it
+*adjustments can be made to script, but only to designated parameters
+
+
+2. How to View Fourier Transforms
+
+-Open 'UT_Fourier.m' in Matlab
+-Press 'Run' in the 'Editor' tab of the Matlab console
+-Follow instructions in the Command Window of Matlab
+-Plot will open in a new tab
+-Use the full signal to gauge the desired location to Fourier transform and enter the window center and window width when prompted
+-Use Freq_Vector and Power_Spectrum variables to save signal
+
+
+3. How to Save a New Ultrasonic Data Set - Preferred Method
+	This method uses 'UT_SaveSignals.m'
+-Place all ultrasonic raw data files in 'Raw UT Data' folder. Naming convention is not important.
+-Open 'UT_SaveSignals.m' in Matlab
+-Run script.
+-Answer the details in the command window, including workspace variable name and data set information.
+
+
+4. How to Save a New Ultrasonic Data Set - Non-Preferred Method
+	This method uses 'UT_SaveSignals_Sequence.m'
+
+-Place all ultrasonic raw data files in 'Raw UT Data' folder
+	*note: do not place files in sub-folders within 'Raw UT Data'
+	*note: together, all files must meet the following criteria:
+		- Cut indices must include 1,2,3...N
+		- Data series count must be the same for ALL cuts
+-Use naming convention as in example below:
+	for ML80 Steel, Specimen 1, Cut 3, data set 2, longitudinal data, name the file:
+		'ML80_s1_c3_long_2.txt'
+-Open 'UT_SaveSignals_Sequence.m' in Matlab
+-Set desired file parameters in 'UT_SaveSignals.m', such as steel type used, number of cuts made, etc
+	*note: if a new steel type is being used, there is a section later in 'UT_SaveSignals.m' where a new steel type can be added to the list
+
+
+5. Purpose of UT_Signal file
+
+'UT_Signal.m' is a definition file on how to save ultrasonic signals. Open it to see what information is saved about ultrasonic signals. 
+If you want to make changes to this file, make sure you also change the 'UT_Signal.m' file in the folder 'Matlab UT Data'
+
+
+
+
+
+
+-------------------------------------------
+As of second iteration of folder
+August 8, 2018
+
+Within this folder there are 3 subfolder:
+-Functions
+	- Contains 14 functions
+-Matlab UT Data
+	- Contains 5 data structures
+-Raw UT Data
+	- is empty
+
+There are also 5 '.m' files:
+-UT_Fourier.m
+-UT_SaveSignals.m
+-UT_SaveSignals_Sequence.m
+-UT_Signal.m
+-UT_VelocityAnalysis.m
+
+The 14 functions are:
+	- CreateButton
+	- Find_UTPeaks
+	- Get_Fourier_Input
+	- HammingFilter
+	- Plot_UT
+	- RawUT_Get
+	- RawUT_Read
+	- Resize_Axes
+	- SavedUT_Load
+	- Select_Signal
+	- Set_Button_Location
+	- Set_Button_Properties
+	- SetAxes
+	- TimeVector_Create
