@@ -1,3 +1,4 @@
+Use 'Direction.txt' for guidance on how to use these files!
 Use 'UT_Fourier.m' and 'UT_VelocityAnalysis.m' and follow the command line. Have Fun!
 
 Keep a copy of the directory to prevent the loss of data due to changes that are made by the user.
