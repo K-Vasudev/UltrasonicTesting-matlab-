@@ -7,6 +7,7 @@ function fig = CreateButton(button_function, fig)
 % Output:       fig - handle to the Figure object after button is added
 
 % Determine which button to add based on 'button_function'
+% Additional buttons can be added, but should be added as new cases
 switch button_function
     case 'display_peak_values'
         button_text = 'Output Visible Peaks';       % Text on button
