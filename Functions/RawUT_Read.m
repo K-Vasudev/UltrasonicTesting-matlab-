@@ -59,6 +59,7 @@ end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % NOTE:
+% Data acquisition should be saved in file format ".txt" for this to work.
 % Data in an output file from the Acquisition Logic digitizer will be in
 % the following form:
 %
